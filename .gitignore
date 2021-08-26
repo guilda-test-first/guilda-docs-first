@@ -1,0 +1,5 @@
+.DS_Store
+site/
+Dockerfile
+create_image.sh
+docker-compose.yml
