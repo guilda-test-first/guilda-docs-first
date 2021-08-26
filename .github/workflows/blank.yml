@@ -54,5 +54,6 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_branch: master
           publish_dir: ./site
           external_repository: guilda-test-first/guilda-doc
