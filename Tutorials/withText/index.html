@@ -1,0 +1,1406 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>withText - Power Simulator Doc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Power Simulator Doc" class="md-header-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Power Simulator Doc
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              withText
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../tutorials/" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Docs/docs/" class="md-tabs__link">
+          Docs
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Power Simulator Doc" class="md-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    Power Simulator Doc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../abstract/" title="Abstract" class="md-nav__link">
+      Abstract
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        withText
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="withText" class="md-nav__link md-nav__link--active">
+      withText
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    対象となるシステムの設定
+  </a>
+  
+    <nav class="md-nav" aria-label="対象となるシステムの設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ・バスの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ・ブランチの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ・同期発電機モデルの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avrpss" class="md-nav__link">
+    ・制御器の情報(AVR,PSSなど)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    電力系統システムの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="電力系統システムの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    送電網の定義
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    バスの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="バスの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack" class="md-nav__link">
+    ・Slackバス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generator" class="md-nav__link">
+    ・Generatorバス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    ・Loadバス
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    機器の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="機器の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generator_1" class="md-nav__link">
+    ・generator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_1" class="md-nav__link">
+    ・load
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    コードのまとめ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    アドミタンス行列の導出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    潮流計算の実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    シュミレーションの実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    制御器の付加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doc" class="md-nav__link">
+    docを参照している部分
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../withSimulation/" title="withSimulation" class="md-nav__link">
+      withSimulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Contents
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Contents" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Contents
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../make_net/" title="make_net" class="md-nav__link">
+      make_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis_net/" title="analysis_net" class="md-nav__link">
+      analysis_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step1/" title="step1" class="md-nav__link">
+      step1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step1-2/" title="step1-2" class="md-nav__link">
+      step1-2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step2/" title="step2" class="md-nav__link">
+      step2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step3/" title="step3" class="md-nav__link">
+      step3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step4/" title="step4" class="md-nav__link">
+      step4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step5/" title="step5" class="md-nav__link">
+      step5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step6/" title="step6" class="md-nav__link">
+      step6
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Docs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/docs/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/power_network/" title="power_network" class="md-nav__link">
+      power_network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/bus/" title="bus" class="md-nav__link">
+      bus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/component/" title="component" class="md-nav__link">
+      component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/controller/" title="controller" class="md-nav__link">
+      controller
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    対象となるシステムの設定
+  </a>
+  
+    <nav class="md-nav" aria-label="対象となるシステムの設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ・バスの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ・ブランチの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ・同期発電機モデルの情報
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avrpss" class="md-nav__link">
+    ・制御器の情報(AVR,PSSなど)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    電力系統システムの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="電力系統システムの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    送電網の定義
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    バスの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="バスの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack" class="md-nav__link">
+    ・Slackバス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generator" class="md-nav__link">
+    ・Generatorバス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    ・Loadバス
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    機器の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="機器の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generator_1" class="md-nav__link">
+    ・generator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_1" class="md-nav__link">
+    ・load
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    コードのまとめ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    アドミタンス行列の導出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    潮流計算の実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    シュミレーションの実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    制御器の付加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doc" class="md-nav__link">
+    docを参照している部分
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>withText</h1>
+                
+                <div style="text-align: center;">
+<img src="../../Figures/tuto-withText.jpg" width=60%;>
+</div>
+
+<p>このチュートリアルではテキストの内容に沿って電力系統システムを自分で定義し，その制御シミュレーションを行う方法を解説します．  </p>
+<ul>
+<li>テキストの第１章で扱われていた3busシステムを定義する。</li>
+<li>各コンポーネントに実際に発電機や負荷を設置し、具体的なパラメータを代入する。</li>
+<li>定義した電力モデルの時間応答を解析したり、コントローラを負荷して解析を行う。  </li>
+</ul>
+<p>といった流れで進めていこうと思います。</p>
+<h2 id="_1"><strong><em><span style="color: purple;">対象となるシステムの設定</span></em></strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本チュートリアルにおいては以下の図ような単純な電力系統システムを自作します．</p>
+<p><img alt="" src="../../Figures/write_3bus.png" /></p>
+<p>この電力系統システムでは３つのバスと機器が繋がっているシステムです．<br />
+ここで上の３busシステムをシュミレータ上で定義するにあたり、一度情報を表にして以下にまとめてみます。(<span style="font-size: 80%; color: red;">※表中の赤字のパラメータの値は適当に決めています。</span>)</p>
+<h4 id="_2">・バスの情報<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>図からも分かるように、このシステムは３つのバスによって構成されています。</p>
+<table>
+<thead>
+<tr>
+<th align="center">バス番号</th>
+<th align="center">潮流計算のために決定された</br>各バスの定常値</th>
+<th align="center">バスの種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">バス１</td>
+<td align="center"><span style="font-size: 100%; color: red;">｜V｜ =1.0 , ∠V＝0.0 </span></td>
+<td align="center">slackバス</td>
+</tr>
+<tr>
+<td align="center">バス２</td>
+<td align="center"><span style="font-size: 100%; color: red;"> P = 1.0 , ｜V｜=1.7 </span></td>
+<td align="center">PVバス</td>
+</tr>
+<tr>
+<td align="center">バス３</td>
+<td align="center"><span style="font-size: 100%; color: red;"> P = -1.25 , Q = -0.5 </span></td>
+<td align="center">PQバス</td>
+</tr>
+</tbody>
+</table>
+<p>表中のP、Q、|V|、∠V はそれぞれ「有効電力」「無効電力」「電圧の大きさ」「電圧の偏角」を指しています。これに関しては<a href="../intro_net">電力ネットワークの解説ページ</a>でも触れているので参考にして下さい。</p>
+<h4 id="_3">・ブランチの情報<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>このシステムではバス間をつなぐブランチは2本あることが分かります。</p>
+<table>
+<thead>
+<tr>
+<th align="center">ブランチが接続している<br>バス</th>
+<th align="center">ブランチ上のインピーダンス</br>と対地静電容量</th>
+<th align="center">位相調整変圧機<br>のパラメータ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">バス１ーバス２</td>
+<td align="center"><span style="font-size: 100%; color: red;"> x = 0.0576j<br>y=0 </span></td>
+<td align="center"><span style="font-size: 100%; color: red;">τ=1.0, θ＝0.0</span></td>
+</tr>
+<tr>
+<td align="center">バス３ーバス２</td>
+<td align="center"><span style="font-size: 100%; color: red;"> x = 0.0625j<br>y=0 </span></td>
+<td align="center"><span style="font-size: 100%; color: red;">τ=1.0, θ＝0.0</span></td>
+</tr>
+</tbody>
+</table>
+<p>表中のｘの値はブランチ上のインピーダンスの値を指しています。この値の逆数がアドミタンスです。yの値は対地静電容量の値を示しており、テキストではbijと表記されていたパラメータです。<br />
+τとθはテキスト内でも出てきましたが、位相調整変圧器のパラメータであり、以下の解説では<code>tap</code>と<code>phase</code>という表記になっています。</p>
+<h4 id="_4">・同期発電機モデルの情報<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>今回のシステムでバス１とバス２が発電機バス(slackバスとPVバス)であるためパラメータ設定する必要のある発電機の個数は２つである。</p>
+<table>
+<thead>
+<tr>
+<th align="center">発電機を付加する<br>バス番号</th>
+<th align="center">q軸/d軸の</br>同期リアクタンス</th>
+<th align="center">d軸の</br>回路時定数</th>
+<th align="center">慣性定数</th>
+<th align="center">制動係数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">バス１</td>
+<td align="center"><span style="color: red;"> Xq =1.59 ,</br> Xd =1.6 , Xd'=0.32 </span></td>
+<td align="center"><span style="color: red;">τｄ =6.0 </span></td>
+<td align="center"><span style="color: red;">M =100 </span></td>
+<td align="center"><span style="color: red;">D =2 </span></td>
+</tr>
+<tr>
+<td align="center">バス２</td>
+<td align="center"><span style="color: red;"> Xq =1.59 ,</br> Xd =1.6 , Xd'=0.23 </span></td>
+<td align="center"><span style="color: red;">τｄ =6.0 </span></td>
+<td align="center"><span style="color: red;">M =18 </span></td>
+<td align="center"><span style="color: red;">D =2 </span></td>
+</tr>
+</tbody>
+</table>
+<p>表の各変数の記号はテキストと同じ様にしましたが、シュミレータ内では  </p>
+<div style="text-align: center;">Xd'→ Xdp　、　τｄ→ Tdo　、　D→ d</div>
+<p>という変数名になっています。<br />
+なお、発電機を円筒形にしたい場合は、<code>Xdp</code>に<code>Xq</code>と同じ値を入れます。</p>
+<h4 id="avrpss">・制御器の情報(AVR,PSSなど)<a class="headerlink" href="#avrpss" title="Permanent link">&para;</a></h4>
+<p>一般に世の中で稼働している発電所の発電機はAVR,PSSなどの制御機が内蔵されています。</p>
+<p>本シュミレータでは後にも実行の仕方を触れますが、制御器を内蔵した発電機モデルを定義する関数<code>generator_AGC</code>という関数があります。その関数を実行する際に制御器のパラメータも引数として代入します。<br />
+制御器のパラメータのデータは１発電機に１つ必要になるため、今回のシステムでは２つ設定する必要があります。</p>
+<table>
+<thead>
+<tr>
+<th align="center">制御機を付加する発電機が</br>接続してるバス番号</th>
+<th align="center">Ka</th>
+<th align="center">Te</th>
+<th align="center">Kpss</th>
+<th align="center">Tpss</th>
+<th align="left">TL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">バス１</td>
+<td align="center"><span style="color: red;">Ka = 2.0</span></td>
+<td align="center"><span style="color: red;">Te = 0.05</span></td>
+<td align="center"><span style="color: red;">Kpss = 200</span></td>
+<td align="center"><span style="color: red;">Tpss = 10</span></td>
+<td align="left"><span style="color: red;">TL1 = 0.015 , TL1'= 0.05</br>TL2 = 0.01 , TL2'= 0.08</span></td>
+</tr>
+<tr>
+<td align="center">バス２</td>
+<td align="center"><span style="color: red;">Ka = 2.0</span></td>
+<td align="center"><span style="color: red;">Te = 0.05</span></td>
+<td align="center"><span style="color: red;">Kpss = 200</span></td>
+<td align="center"><span style="color: red;">Tpss = 10</span></td>
+<td align="left"><span style="color: red;">TL1 = 0.015 , TL1'= 0.05</br>TL2 = 0.01 , TL2'= 0.08</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 140%; color: green;">この表の変数が何を指しているのか分からなかったです。</span></p>
+<p>といったように先に紹介した3busシステムでもこれだけの情報が割り当てられています。<br />
+それでは実際に以下にこれらの情報をもとにシュミレータ内でこの3busシステムを定義していきましょう。</p>
+<h2 id="_5"><strong><em><span style="color: purple;">電力系統システムの定義</span></em></strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>全ての電力系統システムは<code>power_network</code>クラスを用いて実装されます．以下のようにして電力系統クラスを定義します．</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">power_network</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>イメージでいうと、空のテンプレート表のようなものを変数<code>net</code>にあてはめており、これからこの表に機器の情報やブランチ・バスの情報を書き込んでいくための準備のようなプロセスです。</p>
+<h3 id="_6"><strong>送電網の定義</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>まずは各ブランチ間をつなぐ送電網を定義します．<code>power_network</code>クラスには<code>branch</code>というメンバー変数があり，そこに送電網に関するパラメーターを定義します．
+以下，その定義例です．</p>
+<div class="highlight"><pre><span></span><code><span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+
+<span class="w">  </span><span class="mi">2</span>×<span class="mi">7</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">bus_from</span><span class="w">    </span><span class="n">bus_to</span><span class="w">    </span><span class="n">x_real</span><span class="w">    </span><span class="n">x_imag</span><span class="w">    </span><span class="n">y</span><span class="w">    </span><span class="n">tap</span><span class="w">    </span><span class="n">phase</span><span class="w"></span>
+<span class="w">    </span><span class="n">________</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">_</span><span class="w">    </span><span class="n">___</span><span class="w">    </span><span class="n">_____</span><span class="w"></span>
+
+<span class="w">       </span><span class="mi">1</span><span class="w">          </span><span class="mi">2</span><span class="w">         </span><span class="mi">0</span><span class="w">       </span><span class="mf">0.0576</span><span class="w">    </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">3</span><span class="w">          </span><span class="mi">2</span><span class="w">         </span><span class="mi">0</span><span class="w">       </span><span class="mf">0.0625</span><span class="w">    </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">branch</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+各送電網のパラメーターについては詳しくは<a href="path_to_doc_powernetwork_branch">power_network branchについて</a>を参照してください</p>
+<h3 id="_7"><strong>バスの定義</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="slack">・Slackバス<a class="headerlink" href="#slack" title="Permanent link">&para;</a></h4>
+<p>slackバス(swingバス)とは<a href="https://en.wikipedia.org/wiki/Power-flow_study">潮流計算</a>のため特別な発電機バスです．</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_slack</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<p>引数・各パラメーターについては<a href="path_to_doc_bus_slack">bus_slack</a>を参照してください．</p>
+<h4 id="generator">・Generatorバス<a class="headerlink" href="#generator" title="Permanent link">&para;</a></h4>
+<p>Generatorバスとは発電機(Generator)を接続するためのバスです．プログラム上では以下のように</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.7</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+引数・各パラメーターについては<a href="path_to_doc_bus_PV">bus_PV</a>を参照してください．</p>
+<h4 id="load">・Loadバス<a class="headerlink" href="#load" title="Permanent link">&para;</a></h4>
+<p>Loadバスとは負荷を接続するためのバスです．プログラム上では以下のように</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+引数・各パラメーターについては<a href="path_to_doc_bus_PQ">bus_PQ</a>を参照してください．</p>
+<h3 id="_8"><strong>機器の定義</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>機器を定義し，先程の定義したbusに接続します．プログラム上ではi番目のバスに機器を接続するときは</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="nb">i</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">machine</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+のようにします．</p>
+<h4 id="generator_1">・generator<a class="headerlink" href="#generator_1" title="Permanent link">&para;</a></h4>
+<p>slackバスとgeneratorには機器としてgeneratorを接続します．
+generatorを自作するためには以下のような関数を用います．</p>
+<div class="highlight"><pre><span></span><code><span class="n">generator_AGC</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="n">pss</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>各引数,mac,exc,pssはgeneratorのパラメーターに関する<a href="https://jp.mathworks.com/help/matlab/tables.html">table</a>オブジェクトです．詳しくは，<a href="path_to_doc_generator">generator</a>を参照してください．</p>
+<p>以下，generatorを生成しslackバスに接続するまでのコード例を示します．
+<div class="highlight"><pre><span></span><code><span class="c">% mac</span><span class="w"></span>
+<span class="n">Xd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xdp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.32</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.59</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tdo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">6.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="n">d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="n">mac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Xd</span><span class="p">,</span><span class="w"> </span><span class="n">Xdp</span><span class="p">,</span><span class="w"> </span><span class="n">Xq</span><span class="p">,</span><span class="w"> </span><span class="n">Tdo</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% exc</span><span class="w"></span>
+<span class="n">Ka</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Te</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">exc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Ka</span><span class="p">,</span><span class="w"> </span><span class="n">Te</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% pss</span><span class="w"></span>
+<span class="n">Kpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.015</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
+<span class="n">pss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Kpss</span><span class="p">,</span><span class="w"> </span><span class="n">Tpss</span><span class="p">,</span><span class="w"> </span><span class="n">TL1p</span><span class="p">,</span><span class="w"> </span><span class="n">TL1</span><span class="p">,</span><span class="w"> </span><span class="n">TL2p</span><span class="p">,</span><span class="w"> </span><span class="n">TL2</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">generator_AGC</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="n">pss</span><span class="p">));</span><span class="w"></span>
+</code></pre></div></p>
+<h4 id="load_1">・load<a class="headerlink" href="#load_1" title="Permanent link">&para;</a></h4>
+<p>power_simulator内には以下の4つのloadが用意されています．</p>
+<ul>
+<li><a href="path_to_load_const_impedance">load_const_impedance</a></li>
+<li><a href="path_to_load_const_power">load_const_power</a></li>
+<li><a href="path_to_load_varying_impedance">load_varying_impedance</a></li>
+<li><a href="path_to_load_varying_power">load_varying_power</a></li>
+</ul>
+<p>本チュートリアルにおいては，<a href="path_to_load_varying_impedance">load_varying_impedance</a>を用います．</p>
+<div class="highlight"><pre><span></span><code>net.bus{3}.add_component(load_varying_impedance())
+</code></pre></div>
+<h3 id="_9"><strong>コードのまとめ</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>以上のようにして、設定した３busシステムを定義することができました。
+ここまでの実行したコマンドをまとめると以下のようになります。  </p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">power_network</span><span class="p">();</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">branch_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w">   </span><span class="mf">0.0576</span><span class="w">  </span><span class="mi">0</span><span class="w">   </span><span class="mi">1</span><span class="w">   </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">3</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">0</span><span class="w">   </span><span class="s">0.0625</span><span class="w">  </span><span class="s">0</span><span class="w">   </span><span class="s">1</span><span class="w">   </span><span class="s">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">];</span><span class="w"></span>
+
+<span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">array2table</span><span class="p">(</span><span class="n">branch_array</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&#39;bus_from&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;bus_to&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;x_real&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;x_imag&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tap&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phase&#39;</span><span class="p">}</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="n">net</span><span class="p">.</span><span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">branch</span><span class="p">;</span><span class="w"></span>
+<span class="c">%% slack</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_slack</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c">% mac</span><span class="w"></span>
+<span class="n">Xd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xdp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.32</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.59</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tdo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">6.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="n">d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="n">mac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Xd</span><span class="p">,</span><span class="w"> </span><span class="n">Xdp</span><span class="p">,</span><span class="w"> </span><span class="n">Xq</span><span class="p">,</span><span class="w"> </span><span class="n">Tdo</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% exc</span><span class="w"></span>
+<span class="n">Ka</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Te</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">exc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Ka</span><span class="p">,</span><span class="w"> </span><span class="n">Te</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% pss</span><span class="w"></span>
+<span class="n">Kpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.015</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
+<span class="n">pss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Kpss</span><span class="p">,</span><span class="w"> </span><span class="n">Tpss</span><span class="p">,</span><span class="w"> </span><span class="n">TL1p</span><span class="p">,</span><span class="w"> </span><span class="n">TL1</span><span class="p">,</span><span class="w"> </span><span class="n">TL2p</span><span class="p">,</span><span class="w"> </span><span class="n">TL2</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">generator_AGC</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="n">pss</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">%% generator</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.7</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c">% mac</span><span class="w"></span>
+<span class="n">Xd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xdp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.23</span><span class="p">;</span><span class="w"></span>
+<span class="n">Xq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.59</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tdo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">6.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w"></span>
+<span class="n">d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="n">mac</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Xd</span><span class="p">,</span><span class="w"> </span><span class="n">Xdp</span><span class="p">,</span><span class="w"> </span><span class="n">Xq</span><span class="p">,</span><span class="w"> </span><span class="n">Tdo</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% exc</span><span class="w"></span>
+<span class="n">Ka</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Te</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">exc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Ka</span><span class="p">,</span><span class="w"> </span><span class="n">Te</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% pss</span><span class="w"></span>
+<span class="n">Kpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span><span class="w"></span>
+<span class="n">Tpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.015</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span><span class="w"></span>
+<span class="n">TL2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
+<span class="n">pss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">table</span><span class="p">(</span><span class="n">Kpss</span><span class="p">,</span><span class="w"> </span><span class="n">Tpss</span><span class="p">,</span><span class="w"> </span><span class="n">TL1p</span><span class="p">,</span><span class="w"> </span><span class="n">TL1</span><span class="p">,</span><span class="w"> </span><span class="n">TL2p</span><span class="p">,</span><span class="w"> </span><span class="n">TL2</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">2</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">generator_AGC</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="n">pss</span><span class="p">));</span><span class="w"></span>
+<span class="c">%% load</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">3</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">load_varying_impedance</span><span class="p">())</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<h2 id="_10"><strong><em><span style="color: purple;">アドミタンス行列の導出</span></em></strong><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>テキストではブランチのパラメータをもとにアドミタンス行列を求めていました。ここでも試しにシュミレータを使って求めてみましょう。<br />
+以下のように実行するとアドミタンス行列が求まります。
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">get_admittance_matrix</span><span class="w"></span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">33</span><span class="p">.</span>3611<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w">      </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+</code></pre></div>
+おそらくこの様な出力が出てくると思います。この例だと分かりづらいですがアドミタンス行列は一般的に疎行列となり、このように行列内の非零の要素の(行,列)とその要素の値を並べた表として出力しています。<br />
+行列表示にしたい場合は以下のように実行します。</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">get_admittance_matrix</span><span class="p">;</span><span class="w"></span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nb">full</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="w"></span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">17</span><span class="p">.</span>3611<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">33</span><span class="p">.</span>3611<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+<span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w">   </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+</code></pre></div>
+因みに、潮流計算にアドミタンス行列が必要なことから分かるように、この関数は次に解説する<code>initialize</code>という関数の計算内部でも使われています。</p>
+<hr />
+<h2 id="_11"><strong><em><span style="color: purple;">潮流計算の実行</span></em></strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>潮流計算の実行は以下のように行います。
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">initialize</span><span class="w"></span>
+</code></pre></div>
+この関数はコマンドウィンドウ上での出力はありません。<br />
+この関数が実行する計算内容は主に３つあります。</p>
+<ul>
+<li>ブランチの情報からアドミタンス行列を求める。</li>
+<li>求まったアドミタンス行列を用い設定された各バスの定常値を満たすような電圧・電流フェーザを決定する(潮流計算)。</li>
+<li>決定されたバスの電流フェーザと電圧フェーザの定常値に整合するように，各発電機の内部電圧や回転子偏角の定常値を求める。</li>
+</ul>
+<p>実行結果は変数<code>net</code>の中の<code>x_ss</code>,<code>V_ss</code>,<code>I_ss</code>という変数に格納されています。
+各データの読み方</p>
+<ul>
+<li>電圧と電流の定常値：<br />
+<code>V_ss</code>と<code>I_ss</code>に注目します。それぞれに２×(バス数)だけのデータが格納されていると思います。例えば今回の3busシステムならば６つの要素が格納されます。<br />
+上から順に２つずつ組にしたときi組目の２つの変数はi番目のバスの電圧/電流の定常値の[実部；虚部]を指しています。<br />
+つまり、以下のように変数を変換すると１番目のバスの電圧/電流フェーザの定常値から順に並んだ配列が得られるということになります。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Vss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">V_ss</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>1<span class="nb">j</span><span class="o">*</span><span class="n">net</span><span class="p">.</span><span class="n">V_ss</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="n">Iss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">I_ss</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>1<span class="nb">j</span><span class="o">*</span><span class="n">net</span><span class="p">.</span><span class="n">I_ss</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>発電機の状態の定常値:<br />
+このシュミレータでは発電機の状態ベクトル１つあたりに７つの変数が格納されており、発電機の状態の定常値が格納されている変数<code>x_ss</code>は7×(発電機の個数)個の要素を持ちます。<br />
+７変数の状態ベクトルのうち上から３つは順に[回転子偏角(δ);周波数偏差(Δω);内部電圧(E)]を指しています。残りの４つの解説はここでは割愛させていただきます。そのため以下のように実行すれば、回転子偏角と内部電圧の定常値の情報を１番目の発電機から順に並べた表が得られます。
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">xss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">array2table</span><span class="p">([</span><span class="n">net</span><span class="p">.</span><span class="n">x_ss</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">net</span><span class="p">.</span><span class="n">x_ss</span><span class="p">(</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">)],</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;VariableNames&#39;</span><span class="p">,{</span><span class="s">&#39;回転子偏角δ&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;内部電圧E&#39;</span><span class="p">})</span><span class="w"></span>
+
+<span class="n">xss</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="w">  </span><span class="mi">2</span>×<span class="mi">2</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+<span class="w">    </span>回転子偏角δ<span class="w">    </span>内部電圧<span class="n">E</span><span class="w"></span>
+<span class="w">    </span><span class="n">__________</span><span class="w">    </span><span class="n">________</span><span class="w"></span>
+<span class="w">     </span><span class="o">-</span><span class="mf">0.61669</span><span class="w">      </span><span class="mf">0.9006</span><span class="w"> </span>
+<span class="w">      </span><span class="mf">0.96019</span><span class="w">     </span><span class="mf">0.99465</span><span class="w"> </span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="_12"><strong><em><span style="color: purple;">シュミレーションの実行</span></em></strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>自作したシステムに対しシュミレーションを行ってみましょう。<br />
+シュミレーションの実行は<code>simulate</code>という関数を用います。入力引数の<code>option</code>を設定することで、地絡応答や初期値応答、外乱応答などを行うことができます。ここでは地絡を加えたシミュレーションを実行してみましょう。初期値応答や外乱応答などの他のシュミレーションの実行は<a href="../withSimulation">シュミレータベースのTutorial</a>を参照して下さい。  </p>
+<p>以下がコード例です．</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">option</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">struct</span><span class="p">();</span><span class="w"></span>
+<span class="n">option</span><span class="p">.</span><span class="n">fault</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{{[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">10.01</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">}};</span><span class="w"></span>
+
+<span class="n">out</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">simulate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span><span class="w"> </span><span class="n">option</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+ここでは0秒から0.01秒の間にバス１に、10秒から10.01秒の間にバス２にそれぞれ地絡をくわえたときの、0秒から100秒までの時間応答をシュミレーションします。  </p>
+<p>シュミレーション結果は変数<code>out</code>の中に格納されています。この中のデータの内、例として２つ目のgeneratorのシミュレーション結果をグラフとして表示すると以下のようになります．</p>
+<div class="highlight"><pre><span></span><code><span class="n">names</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;\delta&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;\Delta\omega&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;V_{fd}&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;\xi_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;\xi_2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;\xi_3&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="w"></span>
+<span class="w">    </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">j</span><span class="p">),</span><span class="w"> </span><span class="nb">plot</span><span class="p">(</span><span class="n">out</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">X</span><span class="p">{</span><span class="mi">2</span><span class="p">}(:,</span><span class="w"> </span><span class="nb">j</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="n">names</span><span class="p">{</span><span class="nb">j</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tex&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="" src="../../Figures/Tuto_text_result1.png" /></p>
+<h2 id="_13"><strong><em><span style="color: purple;">制御器の付加</span></em></strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>power_simulatorで用意している制御器は以下のような様々なものがあります．</p>
+<ul>
+<li><a href="path_to_doc_controller_broadcast_PI_AGC">controller_broadcast_PI_AGC</a></li>
+<li><a href="path_to_doc_controller_broadcast_PI_AGC_normal">controller_broadcast_PI_AGC_normal</a></li>
+<li><a href="path_to_doc_controller_LQR">controller_LQR</a></li>
+<li><a href="path_to_doc_controller_retrofit_generator_UKF">controller_retrofit_generator_UKF</a></li>
+<li><a href="path_to_doc_controller_retrofit_generator_UKF_LQR">controller_retrofit_generator_UKF_LQR</a></li>
+<li><a href="path_to_doc_controller_retrofit_LQR">controller_retrofit_LQR</a></li>
+</ul>
+<p>本チュートリアルにおいては<a href="path_to_doc_controller_broadcast_PI_AGC_normal">controller_broadcast_PI_AGC_normal</a>を用いて制御シミュレーションを行います．地絡などは先程と同じ条件で以下のように制御器をくみこみます．</p>
+<div class="highlight"><pre><span></span><code><span class="n">cg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">controller_broadcast_PI_AGC_normal</span><span class="p">(</span><span class="n">net</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">5000</span><span class="p">);</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">add_controller_global</span><span class="p">(</span><span class="n">cg</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>このように、電力システムにコントローラを付加した後、先程と同じようにシュミレーションを実行し、同様に２つ目のgeneratorのシミュレーション結果をグラフとして表示したものが以下となります．</p>
+<p><img alt="" src="../../Figures/Tuto_text_result2.png" /></p>
+<hr />
+<p><span style="color: red">完成後削除</span></p>
+<h2 id="doc"><strong>docを参照している部分</strong><a class="headerlink" href="#doc" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code>[hoge](path_to_doc_hoge)
+</code></pre></div>
+というかんじで未完成のdocを参照している部分が多々ありあます．docが完成したあとこの部分を書き換えていただけると有り難いです．</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../tutorials/" title="" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../withSimulation/" title="withSimulation" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                withSimulation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020- Tokyo Tech, Ishizaki Lab.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

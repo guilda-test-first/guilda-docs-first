@@ -1,0 +1,1246 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>controller - Power Simulator Doc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Power Simulator Doc" class="md-header-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Power Simulator Doc
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              controller
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Tutorials/tutorials/" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../docs/" class="md-tabs__link md-tabs__link--active">
+          Docs
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Power Simulator Doc" class="md-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    Power Simulator Doc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../abstract/" title="Abstract" class="md-nav__link">
+      Abstract
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/tutorials/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/withText/" title="withText" class="md-nav__link">
+      withText
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/withSimulation/" title="withSimulation" class="md-nav__link">
+      withSimulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Contents
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Contents" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Contents
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/make_net/" title="make_net" class="md-nav__link">
+      make_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/analysis_net/" title="analysis_net" class="md-nav__link">
+      analysis_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step1/" title="step1" class="md-nav__link">
+      step1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step1-2/" title="step1-2" class="md-nav__link">
+      step1-2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step2/" title="step2" class="md-nav__link">
+      step2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step3/" title="step3" class="md-nav__link">
+      step3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step4/" title="step4" class="md-nav__link">
+      step4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step5/" title="step5" class="md-nav__link">
+      step5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tutorials/step6/" title="step6" class="md-nav__link">
+      step6
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Docs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docs/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../power_network/" title="power_network" class="md-nav__link">
+      power_network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bus/" title="bus" class="md-nav__link">
+      bus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../component/" title="component" class="md-nav__link">
+      component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        controller
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="controller" class="md-nav__link md-nav__link--active">
+      controller
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    コントローラについて取り扱っているチュートリアル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    controller クラスの全体像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_1" class="md-nav__link">
+    controller
+  </a>
+  
+    <nav class="md-nav" aria-label="controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    抽象変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    抽象メソッド
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    メソッド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_broadcast_pi_agc" class="md-nav__link">
+    controller_broadcast_PI_AGC
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_broadcast_PI_AGC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_broadcast_pi_agc_normal" class="md-nav__link">
+    controller_broadcast_PI_AGC_normal
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_broadcast_PI_AGC_normal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_generator" class="md-nav__link">
+    controller_generator
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_lqr" class="md-nav__link">
+    controller_LQR
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_LQR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_retrofit_lqr" class="md-nav__link">
+    controller_retrofit_LQR
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_retrofit_LQR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    コントローラについて取り扱っているチュートリアル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    controller クラスの全体像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_1" class="md-nav__link">
+    controller
+  </a>
+  
+    <nav class="md-nav" aria-label="controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    抽象変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    抽象メソッド
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    メソッド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_broadcast_pi_agc" class="md-nav__link">
+    controller_broadcast_PI_AGC
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_broadcast_PI_AGC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_broadcast_pi_agc_normal" class="md-nav__link">
+    controller_broadcast_PI_AGC_normal
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_broadcast_PI_AGC_normal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_generator" class="md-nav__link">
+    controller_generator
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_lqr" class="md-nav__link">
+    controller_LQR
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_LQR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller_retrofit_lqr" class="md-nav__link">
+    controller_retrofit_LQR
+  </a>
+  
+    <nav class="md-nav" aria-label="controller_retrofit_LQR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">コントローラについて<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><a href="power_networkのリンクを入れる場所は&quot;TODO_link&quot; を挿入しておく"></a></p>
+<h2 id="_2">コントローラについて取り扱っているチュートリアル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../Tutorials/withText">「教科書に沿って学ぶ」ベース(withText)</a></li>
+<li><a href="../../Tutorials/make_net">解析する電力ネットワークを作成する(make_net)</a></li>
+<li><a href="../../Tutorials/step3">【第三回】制御器の導入</a></li>
+<li><a href="../../Tutorials/step6">【第六回】制御器の自作</a></li>
+</ul>
+<h2 id="controller"><em>controller</em> クラスの全体像<a class="headerlink" href="#controller" title="Permanent link">&para;</a></h2>
+<p>まずはコントローラに関するクラスの全体像を示します。</p>
+<p><a href="TODO_link→以下の図のリンクを正しいリンクへ変更"></a>
+<div class="mermaid">graph LR
+
+base{power_simulator}---controller
+
+controller---controller_broadcast_PI_AGC
+controller_broadcast_PI_AGC---controller_broadcast_PI_AGC_normal
+controller---controller_generator
+controller_generator---controller_LQR
+controller_generator---controller_retrofit_LQR
+
+click base "https://www.google.com/"
+click controller "https://www.google.com/"
+click controller_broadcast_PI_AGC "https://www.google.com/"
+click controller_broadcast_PI_AGC_normal "https://www.google.com/"
+click controller_generator "https://www.google.com/"
+click controller_LQR "https://www.google.com/"
+click controller_retrofit_LQR "https://www.google.com/"</div></p>
+<h2 id="controller_1"><strong>controller</strong><a class="headerlink" href="#controller_1" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller.m</a>)</font> <a href="TODO_link"></a></p>
+<p>全てのコントローラクラスの基底クラス．</p>
+<h3 id="_3">抽象変数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>idx_input：コントローラの出力信号，システムへの入力信号が印加されるバスの番号（ベクトル）</li>
+<li>idx_observe：コントローラが観測できるバスの番号（ベクトル）</li>
+<li>idx：idx_inputとidx_observeを並べたベクトル</li>
+</ul>
+<h3 id="_4">メンバ変数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>get_dx_u_func<ul>
+<li>無名関数（各インスタンスでget_dx_uなどを指定する）</li>
+<li><font size=5 color="red">(説明不要かも)</font></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">抽象メソッド<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>[dx, u] = get_dx_u(obj, t, x, X, V, I, U_global)</code></strong><br />
+    コントローラの状態の微分と出力信号（システムへの入力信号）を取得するためのメソッド<br />
+<strong><em>controller</em></strong> クラスの派生クラスにて実装する  <ul>
+<li>入力変数 <code>t</code>：時刻</li>
+<li>入力引数 <code>x</code>：コントローラのの状態（ベクトル）</li>
+<li>入力引数 <code>X</code>：各バスに接続された機器の状態（セル配列）</li>
+<li>入力引数 <code>V</code>：各バスの電圧（2*bus数 の行列）</li>
+<li>入力引数 <code>I</code>：各バスの電流（2*bus数 の行列）</li>
+<li>入力引数 <code>U_global</code>：<br />
+    グローバルコントローラによって各バスに印加される入力信号（セル配列）<br />
+<code>add_controller_grobal</code>で追加されるコントローラ（グローバルコントローラ）では空配列．</li>
+<li>出力引数 <code>dx</code>：コントローラの状態の微分（ベクトル）</li>
+<li>出力引数<code>u</code>：コントローラの出力信号，システムへの入力信号（ベクトル）</li>
+</ul>
+</li>
+<li><strong><code>nx = get_nx(obj)</code></strong>
+    コントローラの状態変数の次元を取得するためのメソッド<br />
+<strong><em>controller</em></strong> クラスの派生クラスにて実装する  <ul>
+<li>出力引数<code>nx</code>：コントローラの状態変数の次元</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6">メソッド<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code>[A, BeX, BeV, Bu, C, DeX, DeV, Du] = get_linear_matrix(obj)</code><br />
+    線形化したコントローラを取得するためのメソッドで
+    <script type="math/tex; mode=display">
+    \dot{x}=Ax+B_X (X-X*)+B_V (V-V*)+B_u U_{global}\\
+    u=Cx+D_X (X-X*)+D_V (V-V*)+D_u U_{global}
+    </script>
+    を満たす行列を返す  </p>
+<ul>
+<li>A：コントローラのA行列</li>
+<li>BeX：コントローラのB行列（観測するバスの状態をスタックしたベクトルに関する）</li>
+<li>BeV：コントローラのB行列（全てのバスの電圧をスタックしたベクトルに関する）</li>
+<li>Bu：コントローラのB行列（グローバルコントローラが生成する全てのバスへの入力信号をスタックしたベクトルに関する）</li>
+<li>C：コントローラのC行列</li>
+<li>DeX：コントローラのD行列（観測するバスの状態ベクトルに関する）</li>
+<li>DeV：コントローラのD行列（全てのバスの電圧をスタックしたベクトルに関する）</li>
+<li>Du：コントローラのD行列（グローバルコントローラが生成する全てのバスへの入力信号をスタックしたベクトルに関する）</li>
+</ul>
+</li>
+<li>
+<p><code>[dx, u] = get_dx_u_linear(obj, t, x, X, V, U_global)</code><br />
+    線形化したコントローラの状態変数の微分と入力を取得するための関数．  </p>
+<ul>
+<li>入力変数 <code>t</code>：時刻</li>
+<li>入力引数 <code>x</code>：コントローラのの状態（ベクトル）</li>
+<li>入力引数 <code>X</code>：各バスに接続された機器の状態（セル配列）</li>
+<li>入力引数 <code>V</code>：各バスの電圧（2*bus数 の行列）</li>
+<li>入力引数 <code>I</code>：各バスの電流（2*bus数 の行列）</li>
+<li>入力引数 <code>U_global</code>：<br />
+    グローバルコントローラによって各バスに印加される入力信号（セル配列）<br />
+<code>add_controller_grobal</code>で追加されるコントローラ（グローバルコントローラ）では空配列．</li>
+<li>出力引数 <code>dx</code>：コントローラの状態の微分（ベクトル）</li>
+<li>出力引数<code>u</code>：コントローラの出力信号，システムへの入力信号（ベクトル）</li>
+</ul>
+</li>
+</ul>
+<h2 id="controller_broadcast_pi_agc"><strong>controller_broadcast_PI_AGC</strong><a class="headerlink" href="#controller_broadcast_pi_agc" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller_broadcast_PI_AGC.m</a>)</font> <a href="TODO_link"></a></p>
+<p>ブロードキャストコントローラ（PIコントローラ）の実装（ <strong><em>controller</em></strong> クラスの派生クラス）<br />
+発電機として<a href="../component/#generator_agc">generator_AGC</a>を想定している．  </p>
+<h3 id="_7">メンバ変数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>idx_observe：コントローラが観測できるバスの番号（ベクトル）</li>
+<li>idx_input：コントローラの出力信号，システムへの入力信号が印加されるバスの番号（ベクトル）</li>
+<li>net：コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）</li>
+<li>Kp：PIコントローラのPゲイン</li>
+<li>Ki：PIコントローラのPゲイン</li>
+<li>K_broadcast：各発電機に対する比例ゲイン（全て1）</li>
+</ul>
+<h3 id="_8">コンストラクタ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong><code>obj = controller_broadcast_PI_AGC(net, y_idx, u_idx, Kp, Ki)</code></strong></p>
+<ul>
+<li>入力引数<code>net</code><br />
+    コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）<br />
+    詳細は<a href="../../Tutorials/step1/">Step1</a>・<a href="../power_network/">Power Network</a>を参照のこと．</li>
+<li>入力引数<code>y_idx</code><br />
+    出力を観測するバスの番号．</li>
+<li>入力引数<code>u_idx</code><br />
+    入力を印加するバスの番号．</li>
+<li>入力引数<code>Kp</code> <code>Ki</code><br />
+    コントローラのPIゲイン．</li>
+</ul>
+<h2 id="controller_broadcast_pi_agc_normal"><strong>controller_broadcast_PI_AGC_normal</strong><a class="headerlink" href="#controller_broadcast_pi_agc_normal" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller_broadcast_PI_AGC_normal.m</a>)</font> <a href="TODO_link"></a></p>
+<p>ブロードキャストコントローラ（PIコントローラ）の実装（ <strong><em>controller_broadcast_PI_AGC</em></strong> クラスの派生クラス）<br />
+発電機として<a href="../component/#generator_agc">generator_AGC</a>を想定している．<br />
+<a href="../controller/#controller_broadcast_pi_agc">controller_broadcast_PI_AGC</a>との違いは，ゲインを電力に比例した形，すなわち，generatorの規模に比例して調整電力を分配していること（<a href="../controller/#controller_broadcast_pi_agc">controller_broadcast_PI_AGC</a>では全て等しいゲインとしている）  </p>
+<h3 id="_9">メンバ変数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>idx_observe：コントローラが観測できるバスの番号（ベクトル）</li>
+<li>idx_input：コントローラの出力信号，システムへの入力信号が印加されるバスの番号（ベクトル）</li>
+<li>net：コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）</li>
+<li>Kp：PIコントローラのPゲイン</li>
+<li>Ki：PIコントローラのPゲイン</li>
+<li>K_broadcast：各発電機に対する比例ゲイン（平均すると1）</li>
+</ul>
+<h3 id="_10">コンストラクタ<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong><code>obj = controller_broadcast_PI_AGC_normal(net, y_idx, u_idx, Kp, Ki)</code></strong></p>
+<ul>
+<li>入力引数<code>net</code><br />
+    コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）<br />
+    詳細は<a href="../../Tutorials/step1/">Step1</a>・<a href="../power_network/">Power Network</a>を参照のこと．</li>
+<li>入力引数<code>y_idx</code><br />
+    出力を観測するバスの番号．</li>
+<li>入力引数<code>u_idx</code><br />
+    入力を印加するバスの番号．</li>
+<li>入力引数<code>Kp</code> <code>Ki</code><br />
+    コントローラのPIゲイン．</li>
+</ul>
+<h2 id="controller_generator"><strong>controller_generator</strong><a class="headerlink" href="#controller_generator" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller_generator.m</a>)</font> <a href="TODO_link"></a></p>
+<p>ブロードキャストコントローラを除く全てのコントローラクラスの基底クラス（ <strong><em>controller</em></strong> クラスの派生クラス）<br />
+<font size=5 color="red">(メンバ変数について説明する必要があるか疑問)</font>  </p>
+<h3 id="_11">コンストラクタ<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong><code>obj = controller_generator(net, area, model, bus_model, X, V, I, U, AVRonly, varargin)</code></strong></p>
+<ul>
+<li>入力引数 <code>net</code><br />
+    コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）<br />
+    詳細は<a href="../../Tutorials/step1/">Step1</a>・<a href="../power_network/">Power Network</a>を参照のこと．</li>
+<li>入力引数 <code>area</code><br />
+    コントローラを追加するバスの番号（ベクトル）<br />
+    指定したバスに入力を印加し，出力を観測できる．</li>
+<li>入力引数 <code>model</code><br />
+    環境の状態空間モデル（matlab既存の <strong><em>ss</em></strong> クラスのインスタンス）<br />
+    環境とは全体ネットワークから<code>area</code>で指定しているバスを除くシステム全体（または一部）のモデルのこと．</li>
+<li>入力引数 <code>bus_model</code><br />
+    環境のモデルが接続しているバスの番号（ベクトル）<br />
+    すなわち，制御器設計を行うローカルシステムと環境が相互接続しているバスを指定する．<br />
+    規定値：<code>area</code>で指定されているバスの中で<code>area</code>外のバスと接続されているもの．</li>
+<li>入力引数 <code>X</code><br />
+    発電機の状態の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>V</code><br />
+    電圧の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>I</code><br />
+    電流の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>U</code><br />
+    入力の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>AVRonly</code><br />
+<code>area</code>で指定したバスに接続している機器の中でgenerator_AGCを含むかどうか．含む場合は<strong>true</strong>，含まない場合は<strong>false</strong>（規定値：true）</li>
+</ul>
+<h2 id="controller_lqr"><strong>controller_LQR</strong><a class="headerlink" href="#controller_lqr" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller_LQR.m</a>)</font> <a href="TODO_link"></a></p>
+<p>あるバスに対するLQRの実装（ <strong><em>controller_generator</em></strong> クラスの派生クラス）<br />
+rectifierの有無を比較するために使用した．</p>
+<h3 id="_12">コンストラクタ<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong><code>obj = controller_LQR(net, area, Q, R, model, bound, varargin)</code></strong></p>
+<ul>
+<li>入力引数 <code>net</code><br />
+    コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）<br />
+    詳細は<a href="../../Tutorials/step1/">Step1</a>・<a href="../power_network/">Power Network</a>を参照のこと．</li>
+<li>入力引数 <code>area</code><br />
+    コントローラを追加するバスの番号（ベクトル）<br />
+    指定したバスに入力を印加し，出力を観測できる．</li>
+<li>入力引数 <code>Q</code>：LQRのQゲイン（行列）</li>
+<li>入力引数 <code>R</code>：LQRのRゲイン（行列）</li>
+<li>入力引数 <code>model</code>
+    環境の状態空間モデル（matlab既存の <strong><em>ss</em></strong> クラスのインスタンス）<br />
+    環境とは全体ネットワークから<code>area</code>で指定しているバスを除くシステム全体（または一部）のモデルのこと．</li>
+<li>入力引数 <code>bound</code>
+    環境のモデルが接続しているバスの番号（ベクトル）<br />
+    すなわち，制御器設計を行うローカルシステムと環境が相互接続しているバスを指定する．<br />
+    規定値：<code>area</code>で指定されているバスの中で<code>area</code>外のバスと接続されているもの．</li>
+</ul>
+<h2 id="controller_retrofit_lqr"><strong>controller_retrofit_LQR</strong><a class="headerlink" href="#controller_retrofit_lqr" title="Permanent link">&para;</a></h2>
+<p><font size=3>(<a href="">controller_retrofit_LQR.m</a>)</font> <a href="TODO_link"></a></p>
+<p>レトロフィットコントローラの実装で，コントローラ設計をLQRで行うもの（ <strong><em>controller_genarator</em></strong> クラスの派生クラス）</p>
+<h3 id="_13">コンストラクタ<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong><code>obj = controller_retrofit_LQR(net, area, Q, R, model, bound, X, V, I, U, varargin)</code></strong></p>
+<ul>
+<li>入力引数 <code>net</code><br />
+    コントローラを追加する予定のネットワークのインスタンス（ <em>power_network</em> クラス）<br />
+    詳細は<a href="../../Tutorials/step1/">Step1</a>・<a href="../power_network/">Power Network</a>を参照のこと．</li>
+<li>入力引数 <code>area</code><br />
+    コントローラを追加するバスの番号（ベクトル）<br />
+    指定したバスに入力を印加し，出力を観測できる．</li>
+<li>入力引数 <code>Q</code>：LQRのQゲイン（行列）</li>
+<li>入力引数 <code>R</code>：LQRのRゲイン（行列）</li>
+<li>入力引数 <code>model</code>
+    環境の状態空間モデル（matlab既存の <strong><em>ss</em></strong> クラスのインスタンス）<br />
+    環境とは全体ネットワークから<code>area</code>で指定しているバスを除くシステム全体（または一部）のモデルのこと．</li>
+<li>入力引数 <code>bound</code>
+    環境のモデルが接続しているバスの番号（ベクトル）<br />
+    すなわち，制御器設計を行うローカルシステムと環境が相互接続しているバスを指定する．<br />
+    規定値：<code>area</code>で指定されているバスの中で<code>area</code>外のバスと接続されているもの．</li>
+<li>入力引数 <code>X</code><br />
+    発電機の状態の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>V</code><br />
+    電圧の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>I</code><br />
+    電流の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+<li>入力引数 <code>U</code><br />
+    入力の平衡点（規定値：導入するネットワークにおける平衡点）</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../component/" title="component" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                component
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020- Tokyo Tech, Ishizaki Lab.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

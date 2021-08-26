@@ -1,0 +1,1190 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>step4 - Power Simulator Doc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Power Simulator Doc" class="md-header-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Power Simulator Doc
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              step4
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../tutorials/" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Docs/docs/" class="md-tabs__link">
+          Docs
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Power Simulator Doc" class="md-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    Power Simulator Doc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../abstract/" title="Abstract" class="md-nav__link">
+      Abstract
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../withText/" title="withText" class="md-nav__link">
+      withText
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../withSimulation/" title="withSimulation" class="md-nav__link">
+      withSimulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Contents
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Contents" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Contents
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../make_net/" title="make_net" class="md-nav__link">
+      make_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis_net/" title="analysis_net" class="md-nav__link">
+      analysis_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step1/" title="step1" class="md-nav__link">
+      step1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step1-2/" title="step1-2" class="md-nav__link">
+      step1-2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step2/" title="step2" class="md-nav__link">
+      step2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step3/" title="step3" class="md-nav__link">
+      step3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        step4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="step4" class="md-nav__link md-nav__link--active">
+      step4
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    解説
+  </a>
+  
+    <nav class="md-nav" aria-label="解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ネットワークの定義
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    バスの変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    バスの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="バスの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack_bus" class="md-nav__link">
+    ・slack bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pv_bus" class="md-nav__link">
+    ・PV bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-unit_bus" class="md-nav__link">
+    ・non-unit bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pq_bus" class="md-nav__link">
+    ・PQ bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee_9busbus" class="md-nav__link">
+    例: IEEE 9busのbusの定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ブランチの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="ブランチの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    branchを定義する際のサンプルコード。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    機器の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="機器の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    発電機の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="発電機の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    ・mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excpss" class="md-nav__link">
+    ・exc、pss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    負荷の定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step5/" title="step5" class="md-nav__link">
+      step5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step6/" title="step6" class="md-nav__link">
+      step6
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Docs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/docs/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/power_network/" title="power_network" class="md-nav__link">
+      power_network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/bus/" title="bus" class="md-nav__link">
+      bus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/component/" title="component" class="md-nav__link">
+      component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/controller/" title="controller" class="md-nav__link">
+      controller
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    解説
+  </a>
+  
+    <nav class="md-nav" aria-label="解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ネットワークの定義
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    バスの変数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    バスの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="バスの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack_bus" class="md-nav__link">
+    ・slack bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pv_bus" class="md-nav__link">
+    ・PV bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-unit_bus" class="md-nav__link">
+    ・non-unit bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pq_bus" class="md-nav__link">
+    ・PQ bus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee_9busbus" class="md-nav__link">
+    例: IEEE 9busのbusの定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ブランチの定義
+  </a>
+  
+    <nav class="md-nav" aria-label="ブランチの定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    branchを定義する際のサンプルコード。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    機器の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="機器の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    発電機の定義
+  </a>
+  
+    <nav class="md-nav" aria-label="発電機の定義">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    ・mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excpss" class="md-nav__link">
+    ・exc、pss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    負荷の定義
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">【第四回】電力系統の自作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>本ステップでできるようになること<br />
+    自分で用意したシステムをpower_simulatorに実装できるようになる</li>
+</ul>
+<h2 id="_2">解説<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">ネットワークの定義<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>今回はネットワークの情報を<code>net</code>と名付けた変数に定義していきます。<br />
+まずはじめに以下のようにして電力系統クラスを定義します。全ての電力系統システムは<code>power_network</code>クラスを用いて実装されます。</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">power_network</span><span class="p">();</span><span class="w"> </span><span class="c">% 何も定義されていないネットワーク</span><span class="w"></span>
+</code></pre></div>
+この動作はイメージでいうと、空のテンプレート表のようなものを変数<code>net</code>にあてはめており、これからこの表に機器の情報やブランチ・バスの情報を書き込んでいくための準備のようなプロセスです。</p>
+<h3 id="_4">バスの変数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>一般的にバスに関係する変数として以下の6つのものがあります。<br />
+これについては、<a href="../../abstract">「電力ネットワークの構成」</a>のページでも簡単に解説しているので参考にしてください。</p>
+<ul>
+<li>
+<script type="math/tex">P</script>: 有効電力</li>
+<li>
+<script type="math/tex">Q</script>: 無効電力</li>
+<li>
+<script type="math/tex">|V|</script>: 電圧</li>
+<li>
+<script type="math/tex">\delta</script>: 位相角</li>
+<li>
+<script type="math/tex">G_{shunt}, B_{shunt}</script>: 地面に繋がっているシャント抵抗のインピーダンス</li>
+</ul>
+<p>以下の３つのバスは<script type="math/tex">P,Q,V,\delta</script>のうち2つの変数とシャント抵抗の値を指定します．</p>
+<h3 id="_5">バスの定義<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>バスの定義は次のように、構造体となっている変数<code>net</code>の中の<code>bus</code>というフィールドにデータを代入することで定義します。
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_slack</span><span class="p">(</span>…<span class="p">);</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span>…<span class="p">);</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span>…<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+ここでは<code>bus_slack,bus_PV,bus_PQ</code>の引数を<code>...</code>と省略していますが、実行する際はここにパラメータを代入する必要があります。<br />
+それでは、以下にこの引数に必要なパラメータの設定について解説していきます。</p>
+<h4 id="slack_bus">・slack bus<a class="headerlink" href="#slack_bus" title="Permanent link">&para;</a></h4>
+<p>電力ネットワーク内の発電機バスは基本全てPVバスに分類されますが、一つだけ電圧の位相を指定し基準として機能するような特殊なバスが存在します。それがslackバスです。<br />
+slackバスでは電圧の絶対値と位相角を指定します。そのため、slackバスの定義は以下のように<code>V_abs,V_angle</code>を引数としています。</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="n">idx</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_slack</span><span class="p">(</span><span class="n">V_abs</span><span class="p">,</span><span class="w"> </span><span class="n">V_angle</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">G_shunt</span><span class="p">,</span><span class="w"> </span><span class="n">B_shunt</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>入力引数<ul>
+<li>V_abs
+    電圧．</li>
+<li>V_angle
+    位相角。通常0となる．</li>
+<li>[G_shunt, B_shunt]
+    地面に繋がっているシャント抵抗のインピーダンスの実部と虚部．</li>
+</ul>
+</li>
+</ul>
+<h4 id="pv_bus">・PV bus<a class="headerlink" href="#pv_bus" title="Permanent link">&para;</a></h4>
+<p>PVバスには、slackバスを除いた全ての発電機バスが分類されます。<br />
+このバスでは、その名の通り有効電力Pと電圧の絶対値|V|を指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="n">idx</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span><span class="n">V_abs</span><span class="p">,</span><span class="w"> </span><span class="n">P_gen</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">G_shunt</span><span class="p">,</span><span class="w"> </span><span class="n">B_shunt</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>入力引数<ul>
+<li>V_abs
+    電圧</li>
+<li>P_gen
+    有効電力</li>
+<li>[G_shunt, B_shunt]
+    地面に繋がっているシャント抵抗のインピーダンスの実部と虚部．</li>
+</ul>
+</li>
+</ul>
+<h4 id="non-unit_bus">・non-unit bus<a class="headerlink" href="#non-unit_bus" title="Permanent link">&para;</a></h4>
+<p>non-unitバスとは機器が接続されていないようなバスのことをさし、他のバスとバスをつなぐ送電網の中継点のような役割を持つポイントです。このバスでは他のバスのように消費電力や電圧のパラメータは指定しません。</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="n">idx</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_non_unit</span><span class="p">([</span><span class="n">G_shunt</span><span class="p">,</span><span class="w"> </span><span class="n">B_shunt</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>入力引数<ul>
+<li>[G_shunt, B_shunt]
+    地面に繋がっているシャント抵抗のインピーダンスの実部と虚部．</li>
+</ul>
+</li>
+</ul>
+<h4 id="pq_bus">・PQ bus<a class="headerlink" href="#pq_bus" title="Permanent link">&para;</a></h4>
+<p>PQバスは基本的に負荷バスが分類されるバスです。<br />
+このバスでは、有効電力Pと有効電力Qを指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="n">idx</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="n">Pload</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Qload</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">G_shunt</span><span class="p">,</span><span class="w"> </span><span class="n">B_shunt</span><span class="p">]);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>入力引数<ul>
+<li>Pload
+    有効電力．</li>
+<li>Qload
+    無効電力．</li>
+<li>[G_shunt, B_shunt]
+    地面に繋がっているシャント抵抗のインピーダンスの実部と虚部．</li>
+</ul>
+</li>
+</ul>
+<h4 id="ieee_9busbus">例: IEEE 9busのbusの定義<a class="headerlink" href="#ieee_9busbus" title="Permanent link">&para;</a></h4>
+<p>ここまでで、バスの各種類とそれぞれの定義方法をしめしたので、ここまでのまとめとして、バスを定義するコードをまとめておきます。
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_slack</span><span class="p">(</span><span class="mf">1.040000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span><span class="mf">1.025000</span><span class="p">,</span><span class="w"> </span><span class="mf">1.630000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PV</span><span class="p">(</span><span class="mf">1.025000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.850000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_non_unit</span><span class="p">([</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.250000</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.500000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">6</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="mf">0.900000</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.300000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">7</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_non_unit</span><span class="p">([</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">8</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_PQ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.000000</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.350000</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">9</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bus_non_unit</span><span class="p">([</span><span class="mf">0.000000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.000000</span><span class="p">])</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="_6">ブランチの定義<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>ブランチの情報は変数<code>net</code>の中の<code>branch</code>というフィールドに定義していきます。
+<div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">branch</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+この右側の<code>branch</code>という変数には、ブランチの情報を含んだ<code>table</code>型のデータを格納します。例えばIEEE 9busだと以下のように定義したデータを<code>net.branch</code>に代入しています。</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="mi">9</span>×<span class="mi">7</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">bus_from</span><span class="w">    </span><span class="n">bus_to</span><span class="w">    </span><span class="n">x_real</span><span class="w">    </span><span class="n">x_imag</span><span class="w">      </span><span class="n">y</span><span class="w">       </span><span class="n">tap</span><span class="w">    </span><span class="n">phase</span><span class="w"></span>
+<span class="w">    </span><span class="n">________</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">______</span><span class="w">    </span><span class="n">___</span><span class="w">    </span><span class="n">_____</span><span class="w"></span>
+
+<span class="w">       </span><span class="mi">1</span><span class="w">          </span><span class="mi">4</span><span class="w">            </span><span class="mi">0</span><span class="w">    </span><span class="mf">0.0576</span><span class="w">         </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">2</span><span class="w">          </span><span class="mi">7</span><span class="w">            </span><span class="mi">0</span><span class="w">    </span><span class="mf">0.0625</span><span class="w">         </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">3</span><span class="w">          </span><span class="mi">9</span><span class="w">            </span><span class="mi">0</span><span class="w">    </span><span class="mf">0.0586</span><span class="w">         </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">4</span><span class="w">          </span><span class="mi">5</span><span class="w">         </span><span class="mf">0.01</span><span class="w">     </span><span class="mf">0.085</span><span class="w">     </span><span class="mf">0.088</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">4</span><span class="w">          </span><span class="mi">6</span><span class="w">        </span><span class="mf">0.017</span><span class="w">     </span><span class="mf">0.092</span><span class="w">     </span><span class="mf">0.079</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">5</span><span class="w">          </span><span class="mi">7</span><span class="w">        </span><span class="mf">0.032</span><span class="w">     </span><span class="mf">0.161</span><span class="w">     </span><span class="mf">0.153</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">6</span><span class="w">          </span><span class="mi">9</span><span class="w">        </span><span class="mf">0.039</span><span class="w">      </span><span class="mf">0.17</span><span class="w">     </span><span class="mf">0.179</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">7</span><span class="w">          </span><span class="mi">8</span><span class="w">       </span><span class="mf">0.0085</span><span class="w">     </span><span class="mf">0.072</span><span class="w">    </span><span class="mf">0.0745</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+<span class="w">       </span><span class="mi">8</span><span class="w">          </span><span class="mi">9</span><span class="w">       </span><span class="mf">0.0119</span><span class="w">    </span><span class="mf">0.1008</span><span class="w">    </span><span class="mf">0.1045</span><span class="w">     </span><span class="mi">0</span><span class="w">       </span><span class="mi">0</span><span class="w">  </span>
+</code></pre></div>
+どのような電力ネットワークを定義する際も<code>branch</code>が7列であることは不変ですが、行数は各バス間をつなぐブランチ(送電網)の本数によって変わります。</p>
+<ul>
+<li>bus_from_phase
+    接続元のバスの番号</li>
+<li>bus_to
+    接続先のバスの番号</li>
+<li>x_real , x_imag
+    ブランチ上のインピーダンスの実部と虚部の値<br />
+    この値の逆数がアドミタンスになります。</li>
+<li>y
+    対地静電容量の値</li>
+<li>tap , phase
+    位相調整変圧器のパラメータ</li>
+</ul>
+<h4 id="branch">branchを定義する際のサンプルコード。<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h4>
+<p>この<code>branch</code>という変数はtable型になっており、さらに各列の変数名は以下のコードのようにそれぞれ「<code>bus_from</code>,・・・,<code>phase</code>」となっていることが重要です。本シュミレーション内ではこの変数名をもとにデータの抽出を行っています。以下のコードを参考にしてください。</p>
+<div class="highlight"><pre><span></span><code><span class="n">branch_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span>ここにデータを入れる<span class="p">];</span><span class="w"></span>
+<span class="n">branch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">array2table</span><span class="p">(</span><span class="n">branch_array</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&#39;bus_from&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;bus_to&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;x_real&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;x_imag&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tap&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;phase&#39;</span><span class="p">}</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<hr />
+<p>ここまでの作業で電力ネットワークの</p>
+<ul>
+<li>バスの個数</li>
+<li>それぞれのバスの種類</li>
+<li>各バス間の送電網の接続</li>
+<li>送電網状の抵抗などの値</li>
+</ul>
+<p>を定義してきました。最後に各バスに発電機バスには発電機を、負荷バスには負荷を接続してあげることで、電力ネットワークは完成します。その後に各バスにコントローラを追加で接続する工程等もありますが、それは次のパートで紹介します。それでは以下に機器(発電機や負荷など)を接続する方法を示していきます。  </p>
+<hr />
+<h3 id="_7">機器の定義<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>バスへの機器接続は以下のように行います．</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="nb">i</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">component</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+以下の解説で機器を定義する関数の解説を行いますが、機器の定義の方法の流れとしては、変数<code>component</code>に関数を用いて機器のモデルを格納する。そのcomponent変数を上のコードでi番目(i=1,2,...)のバスに接続する。といった流れです。  </p>
+<p>それでは各componentの定義を行っていきます。<br />
+componentの定義には以下のような関数があります。</p>
+<ul>
+<li>generator_AGC</li>
+<li>load_varying_impedance
+<span style="color: red; ">他のcomponentの子クラスも載せるべき？</span></li>
+</ul>
+<h4 id="_8"><u>発電機の定義</u><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>発電気の定義には<code>generator_AGC</code>という関数を用います。この関数は同期発電機のモデルを各パラメータを引数として得ることで定義する関数です。</p>
+<div class="highlight"><pre><span></span><code><span class="n">component</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">generator</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="n">pss</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h5 id="mac">・mac<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h5>
+<p>6個のフィールドをもつtableとなります．以下その例です。branchのパラメータの設定のときと同様にmacもtable型で各列の変数は以下のようになっている必要があります。</p>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span>×<span class="mi">6</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">Xd</span><span class="w">     </span><span class="n">Xdp</span><span class="w">     </span><span class="n">Xq</span><span class="w">     </span><span class="n">Tdo</span><span class="w">     </span><span class="n">M</span><span class="w">     </span><span class="n">d</span><span class="w"></span>
+<span class="w"> </span><span class="n">____</span><span class="w">   </span><span class="n">_____</span><span class="w">   </span><span class="n">____</span><span class="w">   </span><span class="n">_____</span><span class="w">   </span><span class="n">___</span><span class="w">   </span><span class="n">___</span><span class="w"></span>
+
+<span class="mf">1.569</span><span class="w">   </span><span class="mf">0.324</span><span class="w">   </span><span class="mf">1.548</span><span class="w">   </span><span class="mf">5.14</span><span class="w">   </span><span class="mi">100</span><span class="w">    </span><span class="mi">2</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>Xd, Xdp, Xq</code>
+    d軸、q軸回りの同期リアクタンス</li>
+<li><code>Tdo</code>
+    ｄ軸回りの回路時定数</li>
+<li><code>M</code>
+    慣性定数</li>
+<li><code>ｄ</code>
+    制動係数</li>
+</ul>
+<h5 id="excpss">・exc、pss<a class="headerlink" href="#excpss" title="Permanent link">&para;</a></h5>
+<p>2個のフィールドをもつtableとなります．以下その例です．</p>
+<div class="highlight"><pre><span></span><code><span class="n">mac</span><span class="w">  </span><span class="p">=</span><span class="w">  </span>
+<span class="mi">1</span>×<span class="mi">2</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">Ka</span><span class="w">     </span><span class="n">Te</span><span class="w"></span>
+<span class="n">____</span><span class="w">   </span><span class="s">____</span><span class="w"></span>
+
+<span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="mf">0.05</span><span class="w">   </span>
+
+<span class="n">pss</span><span class="w"> </span><span class="p">=</span><span class="w">  </span>
+<span class="mi">1</span>×<span class="mi">6</span><span class="w"> </span><span class="nb">table</span><span class="w"></span>
+
+<span class="n">Kpss</span><span class="w">   </span><span class="s">Tpss</span><span class="w">   </span><span class="s">TL1p</span><span class="w">    </span><span class="s">TL1</span><span class="w">    </span><span class="s">TL2p</span><span class="w">   </span><span class="s">TL2</span><span class="w"></span>
+<span class="n">____</span><span class="w">   </span><span class="s">____</span><span class="w">   </span><span class="s">____</span><span class="w">   </span><span class="s">_____</span><span class="w">   </span><span class="s">____</span><span class="w">   </span><span class="s">___</span><span class="w"></span>
+
+<span class="w">  </span><span class="mi">0</span><span class="w">     </span><span class="mi">10</span><span class="w">    </span><span class="mf">0.05</span><span class="w">   </span><span class="mf">0.015</span><span class="w">   </span><span class="mf">0.08</span><span class="w">  </span><span class="mf">0.01</span><span class="w"></span>
+</code></pre></div>
+<p>変数<code>mac</code>は発電機のパラメータであったのに対し、このmac,pssのパラメータはAVRやPSSの制御器のパラメータです。<br />
+<strong><span style="color: red; font-size: 140%">この辺のパラメータについて</span></strong></p>
+<h4 id="_9"><u>負荷の定義</u><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>負荷の定義には<code>load_varying_impedance</code>という関数を用います。この関数は以下の様に定義します。</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">component</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">load_varying_impedance</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="nb">i</span><span class="p">}(</span><span class="mi">1</span><span class="p">,:))</span><span class="w"></span>
+</code></pre></div>
+コードを見て分かるように負荷を接続するときは、既に定義しているバスのパラメータを用いるため、新しく定義する必要のあるパラメータはありません。<br />
+なおコード内の変数<code>i</code>は接続するバスの番号であり、例えば６番目のバスに負荷を接続したい場合は、
+<div class="highlight"><pre><span></span><code><span class="n">component</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">load_varying_impedance</span><span class="p">(</span><span class="n">bus</span><span class="p">(</span><span class="nb">i</span><span class="p">,:))</span><span class="w"></span>
+<span class="n">net</span><span class="p">.</span><span class="n">bus</span><span class="p">{</span><span class="mi">6</span><span class="p">}.</span><span class="n">add_component</span><span class="p">(</span><span class="n">component</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<strong><span style="color: red; font-size: 140%">load_varying_impedanceの引数はどうなっている?</span></strong></p>
+<p>という様にして負荷を接続することができます。</p>
+<hr />
+<p>これで電力ネットワークの定義が一通り終わりました。ここで作成した変数<code>net</code>を持って<a href="../analysis_net">解析編</a>のシュミレーションや線形化などを行うこともできます。次のパートではこの電力ネットワークにコントローラを追加する方法などを解説していきます。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../step3/" title="step3" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                step3
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../step5/" title="step5" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                step5
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020- Tokyo Tech, Ishizaki Lab.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

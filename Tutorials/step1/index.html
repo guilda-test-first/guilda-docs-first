@@ -1,0 +1,968 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>step1 - Power Simulator Doc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Power Simulator Doc" class="md-header-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Power Simulator Doc
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              step1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../tutorials/" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Docs/docs/" class="md-tabs__link">
+          Docs
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Power Simulator Doc" class="md-nav__button md-logo" aria-label="Power Simulator Doc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+
+    </a>
+    Power Simulator Doc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../abstract/" title="Abstract" class="md-nav__link">
+      Abstract
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../withText/" title="withText" class="md-nav__link">
+      withText
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../withSimulation/" title="withSimulation" class="md-nav__link">
+      withSimulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Contents
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Contents" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Contents
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../make_net/" title="make_net" class="md-nav__link">
+      make_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis_net/" title="analysis_net" class="md-nav__link">
+      analysis_net
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        step1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="step1" class="md-nav__link md-nav__link--active">
+      step1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    解説
+  </a>
+  
+    <nav class="md-nav" aria-label="解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    シミュレーションの実行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    例1：初期値応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    例2：外乱応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    例3：入力応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    例4：初期値・外乱・入出力応答（組み合わせ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    シミュレーション結果を見る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    シミュレーション結果の例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step1-2/" title="step1-2" class="md-nav__link">
+      step1-2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step2/" title="step2" class="md-nav__link">
+      step2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step3/" title="step3" class="md-nav__link">
+      step3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step4/" title="step4" class="md-nav__link">
+      step4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step5/" title="step5" class="md-nav__link">
+      step5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../step6/" title="step6" class="md-nav__link">
+      step6
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Docs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/docs/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/power_network/" title="power_network" class="md-nav__link">
+      power_network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/bus/" title="bus" class="md-nav__link">
+      bus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/component/" title="component" class="md-nav__link">
+      component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Docs/controller/" title="controller" class="md-nav__link">
+      controller
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    解説
+  </a>
+  
+    <nav class="md-nav" aria-label="解説">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    シミュレーションの実行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    例1：初期値応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    例2：外乱応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    例3：入力応答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    例4：初期値・外乱・入出力応答（組み合わせ）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    シミュレーション結果を見る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    シミュレーション結果の例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">【第一回】既存系統モデルのシミュレーション<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>本ステップでできるようになること<br />
+    既存の系統モデルの応答をシミュレーションすることで，システムの挙動や特性についてシミュレーションベースで知ることができるようになる</li>
+</ul>
+<p>本ステップでは既存の系統モデル，特に下図に示すような IEEE 68bus system の初期値応答・外乱応答・入力応答をシミュレーションします<br />
+初めに，<strong>既存のネットワークの定義</strong>と<strong>シミュレーションの実行</strong>について記法と変数について解説します<br />
+次に例として，</p>
+<ul>
+<li>初期値応答<br />
+    バス1の回転子偏角の初期状態を少しずらした時の各発電機の応答</li>
+<li>外乱応答<br />
+    0秒でバス1に，10秒でバス10に地絡を発生させた時の各発電機の応答</li>
+<li>入力応答<br />
+    バス1, 10にランダムな入力を加えた時の応答</li>
+</ul>
+<p>のような状況を例示します<br />
+最後に，<strong>応答結果の図示</strong>について解説し，応答結果を示します
+<br><br><br></p>
+<div style="text-align: center;">
+<a href="../../Figures/IEEE68bus.png" target="_blank"><img src="../../Figures/IEEE68bus.png" width=100%;></a>
+</div>
+
+<h2 id="_2">解説<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">シミュレーションの実行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>シミュレーションの実行は次のように行う．
+<div class="highlight"><pre><span></span><code>out = net.simulate(t, u, idx_u, option);
+</code></pre></div></p>
+<ul>
+<li>(クラス)インスタンス<code>net</code><br />
+<em>power_network</em>クラスのインスタンスを使用する．</li>
+<li>入力変数 <code>t</code><br />
+    シミュレーション時間（例えば <code>t=[0 20]</code> で0~20秒に設定できる）</li>
+<li>入力変数 <code>u</code><br />
+    バスへの入力</li>
+<li>入力変数 <code>idx_u</code><br />
+    入力を印加するバスの番号</li>
+<li>入力引数 <code>option</code><br />
+    シミュレーションのオプション  <ul>
+<li>x_init：<br />
+    状態の初期値（規定値: x_ss）<br />
+    バスごとのセル配列あるいは，すべてをスタックしたベクトル．<br />
+    行列（時系列データを想定）で指定すると，最終行の各列の値が抽出される．</li>
+<li>fault：<br />
+    地絡の条件．<br />
+    {[tstart, tend], idx_fault}というセル配列のセル配列．</li>
+</ul>
+</li>
+<li>出力引数 <code>out</code><br />
+    16の機器（generator）ごとの時間応答データが含まれる  <ul>
+<li>t：時刻</li>
+<li>X：バスの状態（バスごとのセル配列）</li>
+<li>V：バスの電圧（バスごとのセル配列）</li>
+</ul>
+</li>
+</ul>
+<h2 id="1">例1：初期値応答<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>まず初めに初期値応答の仕方を説明します。<br />
+初期値は<code>option.x_init</code>に値を入れることで設定できます。この変数に値を入れない場合は、自動的に初期値を潮流計算から求まった平衡点にしてシュミレーションが行われます。以下にそのサンプルコードを紹介します。<br />
+バス1の初期状態のみを平衡点から少しずらした時の応答．
+<div class="highlight"><pre><span></span><code>% ネットワークの定義
+net = network_68bus();
+
+% シミュレーションのためのオプションを定義・決定
+option = struct();
+option.x_init = net.x_ss; % 初期状態を平衡点に設定
+option.x_init(1) = option.x_init(1) + 0.1; % バス1の初期状態を平衡点から少しずらす
+
+% シミュレーションの実行
+out = net.simulate([0 20], option);  % 0~20s
+</code></pre></div></p>
+<h2 id="2">例2：外乱応答<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>次に外乱応答の実行方法を紹介します。以下がそのサンプルコードです。<br />
+0~0.07秒にバス1，10~10.05秒にバス10の地絡を外乱として印加した時の応答．
+<div class="highlight"><pre><span></span><code>% ネットワークの定義
+net = network_68bus();
+
+% シミュレーションのためのオプションを定義・決定
+option = struct();
+option.fault = {{[0 0.07], 1}, {[10 10.05], 10}}; % 地絡の設定
+
+% シミュレーションの実行
+out = net.simulate([0 20], option); % 0~20s
+</code></pre></div></p>
+<h2 id="3">例3：入力応答<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>関数<code>net.simulate()</code>には各バスに入力を入れてシュミレ−ションすることができます。入力の種類としては大きく分けて2種類あります。</p>
+<ul>
+<li>1つめは発電機バスへの入力です。</li>
+<li>2つめは負荷バスへの入力です。</li>
+</ul>
+<p>本チュートリアルでは68busのネットワークを例として使っているため、例えば入力先をbus1~bus16にすれば発電機バスへの入力ということになり、逆に負荷バスに入力を入れる場合は入力先のバスを負荷バスにします。  </p>
+<p>まず、発電機に入力を入れる場合の例を示します。下の例ではバス１とバス10に入力を入れているので発電機バスへの入力ということになります。<br />
+発電機バスへの入力は各バスに２つずつあり、それぞれAGCポートとPSSポートに対応しています。AGCポートは機械的トルクP_mech、PSSポートは界磁電圧V_fieldの値を入力するポートになります。
+<div class="highlight"><pre><span></span><code>net = network_68bus();% ネットワークの定義
+N = 1000; % データ数
+Ts = 0.01; % サンプリング周期
+t = (0:N-1)*Ts;
+u = randn(N, 4); % 今回は2つのバスに入力するので2x2=4つの入力をランダムに決定
+bus_u = [1, 10]; % 入力するバスの指定
+
+% シミュレーションの実行
+out = net.simulate(t, u, bus_u); % 入力を0次ホールド
+</code></pre></div></p>
+<p>次に、負荷バスへ入力を入れる場合の例を示します。下の例では負荷バスであるbus18に入力を入れています。<br />
+まず前提として、負荷バスに入力を入れられるのは、指定した負荷バスのコンポーネントが<code>load_varying_impedance</code>の場合のみです。各バスのコンポーネントの指定の仕方は<a href="../make_net">ネットワークの定義編</a>を参照してください。<br />
+負荷バスへの入力も各バスごとに２つずつあり、対応するバスのアドミタンスの実部と虚部のそれぞれの変化率を指定します。例えばバス18に[0.01,0.02]と入力を入れると、バス18の負荷の値はもともとの値に比べ実部が(1+0.01)倍、虚部が(1+0.02)倍に変化させることができます。
+<div class="highlight"><pre><span></span><code>net = network_68bus;% ネットワークの定義
+
+t = [0:0.1:5, 20];
+u = [0:0.01/50:0.01, 0.01; ...
+     0:0.01/50:0.01, 0.01]&#39;;
+out = net.simulate(t, u, 18);
+</code></pre></div>
+このコードではバス18の負荷を以下のグラフのような変化率で変化させたときのシュミレーションを行っていることになります。  </p>
+<div style="text-align: center;">
+<a href="../../Figures/tutorial1-1-3.jpg"  target="_brank"><img src="../../Figures/tutorial1-1-3.jpg" width=60%></a>
+</div>
+
+<h2 id="4">例4：初期値・外乱・入出力応答（組み合わせ）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>ここまでの設定を全て組み合わせて以下のような場合のシュミレーションを実行させます。「バス1の初期状態のみを平衡点から少しずらし，0~0.07秒にバス1，10~10.05秒にバス10の地絡を外乱として印加する状況で，バス1,10にランダムの入力を加えた時の応答」
+<div class="highlight"><pre><span></span><code>% ネットワークの定義
+net = network_68bus();
+
+% シミュレーションのためのオプションを定義・決定
+option = struct();
+option.x_init = net.x_ss; % 初期状態を平衡点に設定
+option.x_init(1) = option.x_init(1) + 0.1; % バス1の初期状態を平衡点から少しずらす
+option.fault = {{[0 0.07], 1}, {[10 10.05], 10}}; % 地絡の設定
+N = 1000; % データ数
+Ts = 0.01; % サンプリング周期
+t = (0:N-1)*Ts; % シミュレーション時間の決定
+u = randn(N, 4); % 今回は2つのバスに入力するので2x2=4つの入力をランダムに決定
+bus_u = [1, 10]; % 入力するバスの指定
+
+% シミュレーションの実行
+out = net.simulate(t, u, bus_u, option);
+</code></pre></div></p>
+<h2 id="_4">シミュレーション結果を見る<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>以下のコードを最後に付け加えると，発電機ごとの内部状態の応答を3×3=9つのグラフで見ることができます．
+<div class="highlight"><pre><span></span><code>names = {&#39;\delta&#39;, &#39;\Delta\omega&#39;, &#39;E&#39;, &#39;V_{fd}&#39;, &#39;\xi_1&#39;, &#39;\xi_2&#39;, &#39;\xi_3&#39;};
+for i = 1:16
+    figure
+    for j = 1:7
+        subplot(3, 3, j), plot(out.t, out.X{i}(:, j), &#39;o&#39;), title(names{j}, &#39;Interpreter&#39;, &#39;tex&#39;);
+    end
+    subplot(3, 3, 8), plot(out.t, out.V{i}(:, 1)), title(&#39;Real(V)&#39;);
+    subplot(3, 3, 9), plot(out.t, out.V{i}(:, 2)), title(&#39;Imag(V)&#39;);
+end
+</code></pre></div></p>
+<h2 id="_5">シミュレーション結果の例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>例1の結果として，発電機1と2の内部状態の初期値応答のグラフ</li>
+</ul>
+<div style="text-align: center;">
+<a href="../../Figures/tutorial1-1-1.jpg" target="_blank"><img src="../../Figures/tutorial1-1-1.jpg" width="49.5%"></a>
+<a href="../../Figures/tutorial1-1-2.jpg" target="_blank"><img src="../../Figures/tutorial1-1-2.jpg" width="49.5%"></a>
+</div>
+
+<ul>
+<li>例2の結果として，発電機1と2の内部状態の外乱応答のグラフ</li>
+</ul>
+<div style="text-align: center;">
+<a href="../../Figures/tutorial1-2-1.jpg" target="_blank"><img src="../../Figures/tutorial1-2-1.jpg" width="49.5%"></a>
+<a href="../../Figures/tutorial1-2-2.jpg" target="_blank"><img src="../../Figures/tutorial1-2-2.jpg" width="49.5%"></a>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../analysis_net/" title="analysis_net" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                analysis_net
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../step1-2/" title="step1-2" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                step1-2
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020- Tokyo Tech, Ishizaki Lab.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
